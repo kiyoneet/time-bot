@@ -27,5 +27,11 @@ module.exports = (robot) ->
       timeZone: "Asia/Tokyo"
     )
     
-   
+    new cronJob (
+      cronTime: '0 0 17 1 0-11 *'
+      onTick: ->       
+        robot.send {room: "#general"}, "月次報告は書きましたか？"
+      start:    true
+      timeZone: "Asia/Tokyo"
+    )
   
